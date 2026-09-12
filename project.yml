@@ -1,0 +1,63 @@
+name: Draglet
+options:
+  minimumXcodeGenVersion: 2.42.0
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    SWIFT_STRICT_CONCURRENCY: complete
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+    MARKETING_VERSION: "0.2.0"
+    CURRENT_PROJECT_VERSION: "2"
+    CODE_SIGN_STYLE: Automatic
+    ENABLE_HARDENED_RUNTIME: YES
+    ENABLE_APP_SANDBOX: NO
+    COMBINE_HIDPI_IMAGES: YES
+    GCC_TREAT_WARNINGS_AS_ERRORS: YES
+    SWIFT_TREAT_WARNINGS_AS_ERRORS: YES
+targets:
+  Draglet:
+    type: application
+    platform: macOS
+    sources:
+      - Draglet
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.draglet.Draglet
+        INFOPLIST_FILE: Draglet/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        CODE_SIGN_ENTITLEMENTS: Draglet/Draglet.entitlements
+    dependencies:
+      - sdk: AppKit.framework
+      - sdk: SwiftUI.framework
+      - sdk: QuartzCore.framework
+      - sdk: Quartz.framework
+      - sdk: Carbon.framework
+      - sdk: QuickLookThumbnailing.framework
+      - sdk: ServiceManagement.framework
+  DragletTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - Tests
+    dependencies:
+      - target: Draglet
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: app.draglet.DragletTests
+        GENERATE_INFOPLIST_FILE: YES
+schemes:
+  Draglet:
+    build:
+      targets:
+        Draglet: all
+    test:
+      gatherCoverageData: true
+      targets:
+        - DragletTests
+    run:
+      config: Debug
+    archive:
+      config: Release

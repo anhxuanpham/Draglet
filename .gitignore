@@ -1,0 +1,15 @@
+.DS_Store
+build/
+artifacts/
+*.xcuserstate
+xcuserdata/
+.build/
+*.p12
+*.mobileprovision
+*.profraw
+DerivedData/
+*.xcresult/
+
+# Local planning, machine-specific evidence and working notes.
+/plans/
+/Draglet_Project_Plan.md

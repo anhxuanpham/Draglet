@@ -20,6 +20,7 @@ Repeat using the menu's **Show Shelf**, multi-selection, a folder containing fil
 - Deliberate horizontal shake during a fresh supported file, text, link or image drag should summon the shelf; idle movement and stale pasteboards must not.
 - After a successful file drag, repeat an ordinary non-file mouse drag to check stale pasteboard rejection.
 - Try every sensitivity preset and two gestures separated by the cooldown.
+- Summon an empty shelf by shaking, release the mouse and wait at least five seconds: it must stay visible. Repeat with the shortcut. An outside click may dismiss the empty shelf when automatic dismissal is enabled; dragging the last held items out successfully should still dismiss it.
 - Test each screen edge on built-in and external displays, left/right and vertical arrangements, mixed scaling, and display disconnect while holding files.
 - Test normal Spaces, switching Space while holding files, and a fullscreen destination. macOS policies may constrain overlays; record the OS and exact behavior.
 

@@ -207,9 +207,8 @@ final class ShelfController: ObservableObject {
     func externalDragEnded() {
         session.endExternalDrag()
         isDropHighlighted = false
-        // Menu, shortcut and practice-pad opens keep an empty shelf until the
-        // next outside click. Shake-during-drag still auto-dismisses on release.
-        if panel?.allowsKeyboard != true { scheduleEmptyDismiss() }
+        // Releasing the gesture that summoned the shelf must leave it available
+        // for the next drop. Outside clicks and completed transfers own dismissal.
     }
 
     func scheduleEmptyDismiss() {

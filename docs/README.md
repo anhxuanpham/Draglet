@@ -21,7 +21,7 @@ Settings includes a local shake practice pad that previews the shelf; holding fi
 
 Text is exported as native text with a text-file representation; images offer PNG plus a file representation; links offer URL and text. Destination apps choose the format they accept. Remote image links are held as links, without downloading their contents. Content limits are owned by [ContentStorage](../Draglet/Services/ContentStorage.swift) and [ShelfWorkspace](../Draglet/Shelf/ShelfWorkspace.swift).
 
-**Low** needs less shake effort; **High** needs more. Launch at Login is opt-in and may need approval in macOS Login Items. Manually opened empty shelves stay available until an outside interaction; automatic dismissal follows an ended drag. Pending Undo keeps an emptied shelf available. Shake invocation stays nonactivating; deliberate item selection, menu invocation or the keyboard shortcut permits keyboard interaction.
+**Low** needs less shake effort; **High** needs more. Launch at Login is opt-in and may need approval in macOS Login Items. A newly opened empty shelf stays available after you release the mouse, including after a shake. With automatic dismissal enabled, it hides after an outside click or after its last items are successfully dragged out. Pending Undo keeps an emptied shelf available. Shake invocation stays nonactivating; deliberate item selection, menu invocation or the keyboard shortcut permits keyboard interaction.
 
 ## Develop
 

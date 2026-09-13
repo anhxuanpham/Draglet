@@ -103,6 +103,23 @@ final class ShelfControllerTests: XCTestCase {
     }
 
     @MainActor
+    func testShakeOpenedShelfStaysAvailableAfterMouseRelease() async throws {
+        let (controller, suite) = makeController()
+        defer { controller.stop(); UserDefaults().removePersistentDomain(forName: suite) }
+        controller.showShelf()
+        controller.externalDragEnded()
+        try await Task.sleep(for: .milliseconds(3200))
+        XCTAssertEqual(controller.session.state, .visible)
+        XCTAssertTrue(controller.panel?.isVisible == true)
+        XCTAssertFalse(controller.panel?.canBecomeKey == true)
+
+        controller.scheduleEmptyDismiss()
+        try await Task.sleep(for: .milliseconds(850))
+        XCTAssertEqual(controller.session.state, .idle)
+        XCTAssertNil(controller.panel)
+    }
+
+    @MainActor
     func testInteractiveEmptyShelfSurvivesEndedDragUntilOutsideClick() async throws {
         let (controller, suite) = makeController()
         defer { controller.stop(); UserDefaults().removePersistentDomain(forName: suite) }
@@ -111,8 +128,7 @@ final class ShelfControllerTests: XCTestCase {
         try await Task.sleep(for: .milliseconds(750))
         XCTAssertTrue(controller.panel?.isVisible == true)
         XCTAssertEqual(controller.session.state, .visible)
-        controller.showShelf()
-        controller.externalDragEnded()
+        controller.scheduleEmptyDismiss()
         try await Task.sleep(for: .milliseconds(850))
         XCTAssertFalse(controller.panel?.isVisible == true)
         XCTAssertEqual(controller.session.state, .idle)

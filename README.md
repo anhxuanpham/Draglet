@@ -54,3 +54,7 @@ The package command produces a universal Intel/Apple Silicon app, ZIP and DMG un
 Copyright © 2026 **William** ([@anhxuanpham](https://github.com/anhxuanpham)).
 
 Draglet's source code, documentation and included artwork are licensed under the **GNU General Public License, version 3 only** (`GPL-3.0-only`). See [LICENSE](LICENSE) for the full terms. Draglet is provided without warranty.
+
+## Website
+
+The public landing page is in [`site/`](site/). Submission copy for Unikorn is in [`docs/unikorn-submission.md`](docs/unikorn-submission.md).

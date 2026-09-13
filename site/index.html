@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Draglet. Thả vào đây. Kéo tiếp sau.</title>
+  <meta name="description" content="Khay menu bar trên macOS để giữ file, thư mục, text, link và ảnh khi bạn đổi cửa sổ Finder. Không tài khoản, không upload.">
+  <meta property="og:title" content="Draglet. Thả vào đây. Kéo tiếp sau.">
+  <meta property="og:description" content="Khay native trên menu bar macOS. Lắc khi đang kéo file, thả vào khay, kéo sang đích sau.">
+  <meta property="og:image" content="assets/shelf-one.png">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" as="style">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;600;700&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "Draglet",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "macOS 14+",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "author": { "@type": "Person", "name": "William", "url": "https://github.com/anhxuanpham" },
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "description": "Native macOS menu bar shelf for holding files while switching Finder windows."
+  }
+  </script>
+</head>
+<body>
+  <a class="skip" href="#noi-dung">Bỏ qua điều hướng</a>
+  <header class="nav">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#dau-trang">
+        <img src="assets/icon-256.png" width="32" height="32" alt="">
+        Draglet
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#cach-dung">Cách dùng</a></li>
+        <li><a href="#tinh-nang">Tính năng</a></li>
+        <li><a href="#tai">Tải cho Mac</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="noi-dung">
+    <section class="wrap hero" id="dau-trang">
+      <div class="hero-copy">
+        <p class="kicker">Menu bar · macOS 14+</p>
+        <svg class="shake" viewBox="0 0 240 24" aria-hidden="true">
+          <path d="M0 12 H24 L36 4 L52 20 L68 4 L84 20 L100 12 H240"/>
+        </svg>
+        <h1>Thả vào đây.<br>Kéo tiếp sau.</h1>
+        <p>Khay trên menu bar. Giữ file khi đổi cửa sổ Finder.</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#tai">Tải cho Mac</a>
+          <a class="btn btn-ghost" href="https://github.com/anhxuanpham/Draglet">GitHub</a>
+        </div>
+      </div>
+      <div class="stage">
+        <span class="frame" aria-hidden="true"></span>
+        <img src="assets/shelf-one.png" width="700" height="428" alt="Khay Draglet đang giữ một file Document 0.txt, nút Drag all sẵn sàng kéo ra.">
+      </div>
+    </section>
+
+    <section class="band" id="van-de">
+      <div class="wrap band-grid">
+        <h2>Đang kéo file thì cửa sổ đích chưa sẵn.</h2>
+        <p class="pain">Finder không giữ hộ drag. Bạn phải thả, đổi cửa sổ, rồi kéo lại. <strong>Draglet là khay tạm cho đoạn giữa đó.</strong></p>
+      </div>
+    </section>
+
+    <section class="wrap steps" id="cach-dung">
+      <h2>Ba thao tác. Cùng một drag.</h2>
+      <ol>
+        <li>
+          <h3>Kéo và lắc</h3>
+          <p>Giữ chuột trên file trong Finder, lắc ngang. Hoặc Control-Option-Space.</p>
+        </li>
+        <li>
+          <h3>Thả vào khay</h3>
+          <p>Drop xong thì thả chuột. Đổi Space, app, hay cửa sổ Finder khác.</p>
+        </li>
+        <li>
+          <h3>Kéo sang đích</h3>
+          <p>Kéo một dòng, nhóm đã chọn, hoặc Drag all. App đích mới copy hay link.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="wrap split" id="tinh-nang">
+      <div>
+        <h2>Khay giữ tham chiếu, không nuốt file.</h2>
+        <dl class="feat">
+          <div>
+            <dt>File gốc nằm yên</dt>
+            <dd>Draglet giữ URL local. Không copy, không đổi tên, không xóa. App đích mới làm copy hay link.</dd>
+          </div>
+          <div>
+            <dt>Chọn nhóm rồi kéo</dt>
+            <dd>Cmd-click rời, Shift-click dải. Tay nắm dưới khay kéo đúng phần đã chọn.</dd>
+          </div>
+          <div>
+            <dt>Xem nhanh, mở Finder</dt>
+            <dd>Space hoặc double-click để Quick Look. Chuột phải để Reveal in Finder.</dd>
+          </div>
+          <div>
+            <dt>Ẩn không mất hàng</dt>
+            <dd>Nút × và Escape chỉ giấu khay. Clear All nằm trong menu. Undo hoàn tác mục gỡ tay.</dd>
+          </div>
+        </dl>
+      </div>
+      <figure class="shot">
+        <img src="assets/shelf-dark.png" width="700" height="980" alt="Khay Draglet Dark Mode đang giữ 100 file, thanh Drag all nằm ngoài vùng cuộn.">
+      </figure>
+    </section>
+
+    <section class="wrap stack-shot" id="cai-dat">
+      <h2>Phím tắt, nhiều khay, chữ và ảnh.</h2>
+      <figure class="shot">
+        <img src="assets/settings.png" width="960" height="1300" alt="Cửa sổ Settings: phím tắt Control-Option-Space, tùy chọn ẩn khay trống, không tài khoản.">
+      </figure>
+      <dl class="feat feat-grid">
+        <div>
+          <dt>Khay có tên</dt>
+          <dd>Tạo, đổi tên, chuyển khay độc lập. Mỗi khay giữ undo riêng.</dd>
+        </div>
+        <div>
+          <dt>Text, link, ảnh</dt>
+          <dd>Kéo chữ, URL, PNG hay TIFF. Link remote giữ URL, không tải trang.</dd>
+        </div>
+        <div>
+          <dt>Lưu phiên tùy chọn</dt>
+          <dd>Mặc định tắt. Bật thì lưu trên máy. Tắt thì xóa bản lưu, khay đang mở vẫn còn.</dd>
+        </div>
+      </dl>
+    </section>
+
+    <section class="wrap trust" id="rieng-tu">
+      <h2>Chạy trên máy bạn. Không có máy chủ của chúng tôi.</h2>
+      <div class="facts">
+        <div>
+          <strong>Không tài khoản</strong>
+          Không đăng nhập, không analytics SDK, không clipboard history.
+        </div>
+        <div>
+          <strong>Không upload</strong>
+          Không có client mạng. File không rời máy vì Draglet.
+        </div>
+        <div>
+          <strong>GPL-3.0</strong>
+          Mã nguồn mở. Tác giả William, github.com/anhxuanpham.
+        </div>
+        <div>
+          <strong>macOS 14+</strong>
+          AppKit kéo thả native. Không sandbox App Store. Bản 0.2.0 ký ad-hoc.
+        </div>
+      </div>
+    </section>
+
+    <section class="download" id="tai">
+      <div class="wrap download-grid">
+        <div>
+          <h2>Tải Draglet 0.2.0 cho Mac.</h2>
+          <p>Universal, Intel và Apple Silicon. Ký ad-hoc, chưa notarize. Lần đầu: chuột phải app, Open, rồi Open lần nữa.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="downloads/Draglet-0.2.0.dmg" download>Tải cho Mac</a>
+            <a class="btn btn-ghost" href="downloads/Draglet-0.2.0.zip" download>Tải ZIP</a>
+          </div>
+          <p class="note">Cần Xcode chỉ khi tự build. Người dùng cuối mở DMG là đủ. Launch at Login mặc định tắt.</p>
+        </div>
+        <figure class="shot">
+          <img src="assets/shelf-many.png" width="700" height="900" alt="Khay sáng, 20 file, kéo cả nhóm bằng Drag all.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="wrap faq" id="hoi-dap">
+      <h2>Câu hỏi thường gặp</h2>
+      <details>
+        <summary>macOS có chặn app chưa notarize không?</summary>
+        <p>Có thể. Bản local này ký ad-hoc. Chuột phải Draglet.app, chọn Open, xác nhận Open. Không dùng bản này nếu bạn cần Gatekeeper Developer ID.</p>
+      </details>
+      <details>
+        <summary>Draglet có xóa hay di chuyển file gốc không?</summary>
+        <p>Không. Khay giữ tham chiếu. Copy hay alias do app đích quyết định khi bạn kéo ra. Gỡ khỏi khay chỉ bỏ reference.</p>
+      </details>
+      <details>
+        <summary>Lắc chuột không hiện khay thì sao?</summary>
+        <p>Giữ nút chuột trên file, lắc ngang. Ô practice trong Settings chỉ tập cử chỉ. Phím tắt mặc định là Control-Option-Space.</p>
+      </details>
+      <details>
+        <summary>Có bản Windows hay iPhone không?</summary>
+        <p>Không. Draglet là utility macOS, menu bar, kéo thả Finder. Yêu cầu macOS 14 trở lên.</p>
+      </details>
+    </section>
+  </main>
+
+  <footer class="wrap foot">
+    <span>Draglet 0.2.0 · GPL-3.0 · © 2026 William</span>
+    <span><a href="https://github.com/anhxuanpham/Draglet">Mã nguồn</a> · <a href="https://github.com/anhxuanpham/Draglet/blob/main/docs/privacy.md">Quyền riêng tư</a></span>
+  </footer>
+  <script src="app.js" defer></script>
+</body>
+</html>

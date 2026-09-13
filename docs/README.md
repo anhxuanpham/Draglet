@@ -15,6 +15,8 @@ A successful destination copy/link removes the corresponding references by defau
 
 Double-click an item, or select it and press **Space**, for Quick Look. Right-click a file to reveal its original in Finder. Drag the tray icon in the shelf header to move the shelf out of the way. The shelf-name menu creates, renames and switches independent shelves; a shelf must be empty before removing it.
 
+Author and license information is visible in **Settings → General → About Draglet**. The **About Draglet** button opens the app's version and full credits; it is also available in the menu bar menu.
+
 Settings includes a local shake practice pad that previews the shelf; holding files still requires shaking while a Finder drag is in progress. Favorite folders open a destination in Finder; drag items there using the normal workflow. The **Restore shelves after quitting** option is off by default. Enabling it stores names, file paths and rich content on this Mac; disabling it deletes the saved snapshot while keeping the open session. See [privacy](privacy.md).
 
 Text is exported as native text with a text-file representation; images offer PNG plus a file representation; links offer URL and text. Destination apps choose the format they accept. Remote image links are held as links, without downloading their contents. Content limits are owned by [ContentStorage](../Draglet/Services/ContentStorage.swift) and [ShelfWorkspace](../Draglet/Shelf/ShelfWorkspace.swift).

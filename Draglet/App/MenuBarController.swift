@@ -103,7 +103,8 @@ final class MenuBarController: NSObject, NSMenuDelegate {
                 preferences: preferences,
                 login: login,
                 shortcutService: shortcutService,
-                onPracticeRecognized: { [weak self] in self?.shelf.showShelf(interactive: true) }
+                onPracticeRecognized: { [weak self] in self?.shelf.showShelf(interactive: true) },
+                onShowAbout: { [weak self] in self?.showAbout() }
             ))
             window.center()
             settingsWindow = window

@@ -8,6 +8,7 @@ struct SettingsView: View {
     @ObservedObject var login: LaunchAtLoginService
     var shortcutService: GlobalShortcutService? = nil
     var onPracticeRecognized: (() -> Void)? = nil
+    var onShowAbout: (() -> Void)? = nil
     @State private var recording = false
     @State private var practiceCount = 0
 
@@ -51,7 +52,18 @@ struct SettingsView: View {
                     if login.needsApproval { Button("Allow Draglet in Login Items…", action: login.openSystemSettings) }
                     if let error = login.errorMessage { Text(error).font(.caption).foregroundStyle(.red) }
                 }
-                Section { Text("No account, uploads or clipboard monitoring.").font(.caption).foregroundStyle(.secondary) }
+                Section("About Draglet") {
+                    HStack {
+                        VStack(alignment: .leading, spacing: 4) {
+                            Text("Created by William").fontWeight(.medium)
+                            Link("@anhxuanpham", destination: URL(string: "https://github.com/anhxuanpham/Draglet")!)
+                            Text("GNU GPL v3 · No account, uploads or clipboard monitoring.")
+                                .font(.caption).foregroundStyle(.secondary)
+                        }
+                        Spacer()
+                        if let onShowAbout { Button("About Draglet", action: onShowAbout) }
+                    }
+                }
             }.formStyle(.grouped).tabItem { Label("General", systemImage: "gearshape") }
             Form {
                 Section("Shake gesture") {
